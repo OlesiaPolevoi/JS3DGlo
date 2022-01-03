@@ -1,0 +1,25 @@
+{
+  "name": "js3dglo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlesiaPolevoi/JS3DGlo.git"
+  },
+  "keywords": [],
+  "author": "Olesia Polevoi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlesiaPolevoi/JS3DGlo/issues"
+  },
+  "homepage": "https://github.com/OlesiaPolevoi/JS3DGlo#readme",
+  "description": "",
+  "devDependencies": {
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
