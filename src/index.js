@@ -1,10 +1,8 @@
 "use strict";
 //entry point
 
-const burger = require("./modules/burger");
-import sliderOne from "./modules/slider";
-const sliderTwo = require("./modules/badScript");
+import oneJS from "./modules/one";
+oneJS();
 
-burger();
-sliderOne();
-sliderTwo();
+import twoJS from "./modules/two";
+twoJS();
