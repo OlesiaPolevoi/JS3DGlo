@@ -1,7 +1,7 @@
 "use strict";
 
 const oneJS = () => {
-  const one = "one.js";
+  const one = "one.js ONE!!!";
   console.log(one);
 };
 
