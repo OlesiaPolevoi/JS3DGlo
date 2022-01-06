@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\n\nconst oneJS = () => {\n  const one = \"one.js ONE!!!\";\n  console.log(one);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (oneJS);\n\n\n//# sourceURL=webpack:///./modules/one.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\n\nconst oneJS = () => {\n  const timerHours = document.getElementById(\"timer-hours\");\n  const timerMinutes = document.getElementById(\"timer-minutes\");\n  const timerSeconds = document.getElementById(\"timer-seconds\");\n\n  const getTimeRemaining = (deadline) => {\n    let dateStop = new Date(deadline).getTime();\n    let dateNow = new Date().getTime();\n    let timeRemaining = (dateStop - dateNow) / 1000;\n\n    // let days = Math.floor(timeRemaining / 60 / 60 / 24);\n    // let hours = Math.floor((timeRemaining / 60 / 60) % 24);\n    let hours = Math.floor(timeRemaining / 60 / 60);\n    let minutes = Math.floor((timeRemaining / 60) % 60);\n    let seconds = Math.floor(timeRemaining % 60);\n\n    return {\n      // hours: hours,\n      // minutes: minutes,\n      // seconds: seconds,\n      hours,\n      minutes,\n      seconds,\n    };\n    // console.log(days);\n  };\n\n  const updateClock = () => {\n    let getTime = getTimeRemaining(\"08 January 2022\");\n    console.log(getTime);\n    // timerHours.textContent = hours;\n    // timerMinutes.textContent = minutes;\n    // timerSeconds.textContent = seconds;\n  };\n\n  updateClock();\n  // countTimer(\"08 January 2022\");\n  // setInterval(countTimer, 1000, \"08 January 2022\");\n\n  // getTimeRemaining(\"08 January 2022\");\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (oneJS);\n\n\n//# sourceURL=webpack:///./modules/one.js?");
 
 /***/ }),
 
@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\n\nconst twoJS = () => {\n  const two = \"two.jsTWO!!!\";\n  console.log(two);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (twoJS);\n\n\n//# sourceURL=webpack:///./modules/two.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\n\nconst twoJS = () => {\n  const two = \"two\";\n  console.log(two);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (twoJS);\n\n\n//# sourceURL=webpack:///./modules/two.js?");
 
 /***/ })
 
