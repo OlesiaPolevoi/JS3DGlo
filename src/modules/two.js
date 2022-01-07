@@ -1,8 +1,8 @@
 "use strict";
 
-const twoJS = () => {
-  const two = "two";
-  console.log(two);
-};
+// const twoJS = () => {
+//   const two = "two2";
+//   console.log(two);
+// };
 
-export default twoJS;
+// export default twoJS;

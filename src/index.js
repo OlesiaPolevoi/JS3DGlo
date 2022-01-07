@@ -1,8 +1,8 @@
 "use strict";
 //entry point
 
-import oneJS from "./modules/one";
-oneJS();
+import timer from "./modules/timer";
+timer("10 January 2022");
 
-import twoJS from "./modules/two";
-twoJS();
+// import twoJS from "./modules/two";
+// twoJS();
