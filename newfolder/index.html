@@ -5,7 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <p id="timeOfDay"></p>
+    <p id="weekDay"></p>
+    <div class="timer-numbers" id="timer">
+      <span>Текущее время:</span>
+      <span id="timer-hours">00</span>
+      <span>:</span>
+      <span id="timer-minutes">00</span>
+      <span>:</span>
+      <span id="timer-seconds">00</span>
+      <span id="am-or-pm"></span>
+    </div>
+    <p id="daysTillNewYear"></p>
+  </body>
 </html>

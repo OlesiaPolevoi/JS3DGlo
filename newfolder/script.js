@@ -1,41 +1,87 @@
 "use strict";
 
-// let dateNow = new Date().getTime();
-// console.log(dateNow);
+/// get current date
+let date = new Date();
 
-// let getDate = () => {
-//   let hours = Math.floor(dateNow / 60 / 60);
-//   let minutes = Math.floor((dateNow / 60) % 60);
-//   let seconds = Math.floor(dateNow % 60);
+const currentDay = () => {
+  //Get current time of day
+  const timeOfDay = document.getElementById("timeOfDay");
+  let currentHour = date.getHours();
 
-//   return {
-//     hours: hours,
-//     minutes: minutes,
-//     seconds: seconds,
-//     // timeRemaining,
-//   };
-// };
+  if (currentHour >= 6 && currentHour < 12) {
+    timeOfDay.textContent = "Доброе утро";
+  }
+  if (currentHour >= 12 && currentHour < 17) {
+    timeOfDay.textContent = "Добрый день";
+  }
+  if (currentHour >= 17 && currentHour < 21) {
+    timeOfDay.textContent = "Добрый вечер";
+  }
+  if (currentHour >= 21 || currentHour < 6) {
+    timeOfDay.textContent = "Добрая ночь";
+  }
 
-// console.log(getDate());
+  //Get current weekday
+  const weekDay = document.getElementById("weekDay");
+  let currentWeekday = date.getDay();
 
-let currentTime = new Date();
-console.log(currentTime);
-// {
-//   console.log("Добрый день");
-//   console.log("Доброе утро");
+  if (currentWeekday == 1) {
+    weekDay.textContent = "Сегодня: Понедельник";
+  }
+  if (currentWeekday == 2) {
+    weekDay.textContent = "Сегодня: Вторник";
+  }
+  if (currentWeekday == 3) {
+    weekDay.textContent = "Сегодня: Среда";
+  }
+  if (currentWeekday == 4) {
+    weekDay.textContent = "Сегодня: Четверг";
+  }
+  if (currentWeekday == 5) {
+    weekDay.textContent = "Сегодня: Пятница";
+  }
+  if (currentWeekday == 6) {
+    weekDay.textContent = "Сегодня: Суббота";
+  }
+  if (currentWeekday == 7) {
+    weekDay.textContent = "Сегодня: Воскресенье";
+  }
 
-//   console.log("Добрый вечер");
-//   console.log("Добрая ночь");
-// }
+  //Get current time
+  const timerHours = document.getElementById("timer-hours");
+  const timerMinutes = document.getElementById("timer-minutes");
+  const timerSeconds = document.getElementById("timer-seconds");
+  const amOrPm = document.getElementById("am-or-pm");
 
-// Сегодня: Понедельник
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
 
-// Вывести текущий день и время на страницу в таком формате
+  if (hours >= 12) {
+    timerHours.textContent = hours - 12;
+    amOrPm.textContent = "PM";
+  }
+  if (hours < 12) {
+    timerHours.textContent = hours;
+    amOrPm.textContent = "AM";
+  }
 
-// Добрый день (утро, вечер, ночь в зависимости от времени суток)
+  timerMinutes.textContent = minutes;
+  timerSeconds.textContent = seconds;
 
-// Сегодня: Понедельник
+  ///Get days till New Year
+  let newYear = new Date(date.getFullYear(), 11, 31);
 
-// Текущее время: 12:05:15 PM
+  if (date.getMonth() == 11 && date.getDate() > 31) {
+    newYear.setFullYear(newYear.getFullYear() + 1);
+  }
+  let day = 1000 * 60 * 60 * 24;
 
-// До нового года осталось 175 дней
+  let daysTillNewYear = document.getElementById("daysTillNewYear");
+  daysTillNewYear.textContent =
+    "До нового года осталось " +
+    Math.ceil((newYear.getTime() - date.getTime()) / day) +
+    " дней";
+};
+
+currentDay();
