@@ -1,10 +1,8 @@
 "use strict";
 
-/// get current date
 let date = new Date();
 
 const currentDay = () => {
-  //Get current time of day
   const timeOfDay = document.getElementById("timeOfDay");
   let currentHour = date.getHours();
 
@@ -21,7 +19,6 @@ const currentDay = () => {
     timeOfDay.textContent = "Добрая ночь";
   }
 
-  //Get current weekday
   const weekDay = document.getElementById("weekDay");
   let currentWeekday = date.getDay();
 
@@ -47,7 +44,6 @@ const currentDay = () => {
     weekDay.textContent = "Сегодня: Воскресенье";
   }
 
-  //Get current time
   const timerHours = document.getElementById("timer-hours");
   const timerMinutes = document.getElementById("timer-minutes");
   const timerSeconds = document.getElementById("timer-seconds");
@@ -69,7 +65,6 @@ const currentDay = () => {
   timerMinutes.textContent = minutes;
   timerSeconds.textContent = seconds;
 
-  ///Get days till New Year
   let newYear = new Date(date.getFullYear(), 11, 31);
 
   if (date.getMonth() == 11 && date.getDate() > 31) {
