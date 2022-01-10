@@ -1,8 +1,9 @@
 "use strict";
-//entry point
 
 import timer from "./modules/timer";
-timer("7 January 2022");
+import menu from "./modules/menu";
 
+timer("7 January 2022");
+menu();
 // import twoJS from "./modules/two";
 // twoJS();
