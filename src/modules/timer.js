@@ -11,22 +11,16 @@ const timer = (deadline) => {
     let dateNow = new Date().getTime();
     let timeRemaining = (dateStop - dateNow) / 1000;
 
-    // let days = Math.floor(timeRemaining / 60 / 60 / 24);
-    // let hours = Math.floor((timeRemaining / 60 / 60) % 24);
     let hours = Math.floor(timeRemaining / 60 / 60);
     let minutes = Math.floor((timeRemaining / 60) % 60);
     let seconds = Math.floor(timeRemaining % 60);
 
     return {
-      // hours: hours,
-      // minutes: minutes,
-      // seconds: seconds,
       timeRemaining,
       hours,
       minutes,
       seconds,
     };
-    // console.log(days);
   };
 
   const updateClock = () => {
@@ -52,10 +46,6 @@ const timer = (deadline) => {
       timerSeconds.textContent = getTime.seconds;
     }
 
-    // if (getTime.timeRemaining > 0) {
-    //   setTimeout(updateClock, 1000);
-    // }
-
     if (getTime.timeRemaining < 0) {
       clearInterval(idInterval);
 
@@ -65,29 +55,8 @@ const timer = (deadline) => {
     }
   };
 
+  updateClock();
   let idInterval = setInterval(updateClock, 1000);
-  // clearInterval(idInterval);
-
-  //NOTE
-
-  // let count = 0;
-
-  // const logger = (str) => {
-  //   console.log(`Hello, I'm ${str}.`);
-  // };
-
-  // let idInterval = setInterval(() => {
-  //   count++;
-  //   logger("setInterval");
-  //   if (count === 10) clearInterval(idInterval);
-  // }, 500);
-
-  //Переписать таймер с помощью setInterval. Будьте внимательны, чтобы setInterval не вызывал сам себя, не превращался в рекурсивный вызов!
-  //Проверить себя легко. Выведите что-нибудь в консоль внутри функции updateClock. Вывод в консоль должен происходить 1 раз за 1000ms.
-
-  // updateClock();
-  // countTimer("08 January 2022");
-  // setInterval(countTimer, 1000, "08 January 2022");
 };
 
 export default timer;
