@@ -23,39 +23,67 @@ const timer = (deadline) => {
     };
   };
 
-  const updateClock = () => {
+  const updateOneClockTick = () => {
     let getTime = getTimeRemaining();
 
-    console.log(getTime);
-
-    if (getTime.hours < 10) {
+    if (getTime.timeRemaining <= 0) {
+      timerHours.textContent = "00";
+      timerMinutes.textContent = "00";
+      timerSeconds.textContent = "00";
+      return;
+    }
+    if (getTime.hours < 10 && getTime.hours > 0) {
       timerHours.textContent = "0" + getTime.hours;
     } else {
       timerHours.textContent = getTime.hours;
     }
 
-    if (getTime.minutes < 10) {
+    if (getTime.minutes < 10 && getTime.minutes > 0) {
       timerMinutes.minutes = "0" + getTime.minutes;
     } else {
       timerMinutes.textContent = getTime.minutes;
     }
 
-    if (getTime.seconds < 10) {
+    if (getTime.seconds < 10 && getTime.minutes > 0) {
       timerSeconds.textContent = "0" + getTime.seconds;
     } else {
       timerSeconds.textContent = getTime.seconds;
     }
+  };
 
-    if (getTime.timeRemaining < 0) {
-      clearInterval(idInterval);
+  updateOneClockTick();
 
+  const updateClock = () => {
+    let getTime = getTimeRemaining();
+
+    if (getTime.timeRemaining <= 0) {
       timerHours.textContent = "00";
       timerMinutes.textContent = "00";
       timerSeconds.textContent = "00";
+
+      clearInterval(idInterval);
+      return;
+    }
+
+    if (getTime.hours < 10 && getTime.hours > 0) {
+      timerHours.textContent = "0" + getTime.hours;
+    } else {
+      timerHours.textContent = getTime.hours;
+    }
+
+    if (getTime.minutes < 10 && getTime.minutes > 0) {
+      timerMinutes.minutes = "0" + getTime.minutes;
+    } else {
+      timerMinutes.textContent = getTime.minutes;
+    }
+
+    if (getTime.seconds < 10 && getTime.minutes > 0) {
+      timerSeconds.textContent = "0" + getTime.seconds;
+    } else {
+      timerSeconds.textContent = getTime.seconds;
     }
   };
 
-  updateClock();
   let idInterval = setInterval(updateClock, 1000);
 };
 
