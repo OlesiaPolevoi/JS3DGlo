@@ -40,13 +40,22 @@ const inputForms = () => {
   const formThreeEmail = document.getElementById("form3-email");
 
   formOneEmail.addEventListener("input", (e) => {
-    e.target.value = e.target.value.replace(/[^a-zA-Z\-\_\@\.\!\~\*\']/gi, "");
+    e.target.value = e.target.value.replace(
+      /[^a-zA-Z\-\d\_\@\.\!\~\*\']/gi,
+      ""
+    );
   });
   formTwoEmail.addEventListener("input", (e) => {
-    e.target.value = e.target.value.replace(/[^a-zA-Z\-\_\@\.\!\~\*\']/gi, "");
+    e.target.value = e.target.value.replace(
+      /[^a-zA-Z\-\_\d\@\.\!\~\*\']/gi,
+      ""
+    );
   });
   formThreeEmail.addEventListener("input", (e) => {
-    e.target.value = e.target.value.replace(/[^a-zA-Z\-\_\@\.\!\~\*\']/gi, "");
+    e.target.value = e.target.value.replace(
+      /[^a-zA-Z\-\d\_\@\.\!\~\*\']/gi,
+      ""
+    );
   });
 
   const formOnePhone = document.getElementById("form1-phone");
