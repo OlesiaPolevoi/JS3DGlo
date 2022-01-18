@@ -3,9 +3,9 @@
 import timer from "./modules/timer";
 import menu from "./modules/menu";
 import modal from "./modules/modal";
-import calculator from "./modules/calculator";
+import inputForms from "./modules/inputForms";
 
 timer("15 January 2022");
 menu();
 modal();
-calculator();
+inputForms();

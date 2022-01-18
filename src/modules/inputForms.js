@@ -1,5 +1,5 @@
 "use strict";
-const calculator = () => {
+const inputForms = () => {
   const calcSquare = document.querySelector(".calc-square");
   const calcCount = document.querySelector(".calc-count");
   const calcDay = document.querySelector(".calc-day");
@@ -66,4 +66,4 @@ const calculator = () => {
   });
 };
 
-export default calculator;
+export default inputForms;
