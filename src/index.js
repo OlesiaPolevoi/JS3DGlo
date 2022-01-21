@@ -6,6 +6,7 @@ import modal from "./modules/modal";
 import inputForms from "./modules/inputForms";
 import tabs from "./modules/tabs";
 import slider from "./modules/slider";
+import calc from "./modules/calc";
 
 timer("15 January 2022");
 menu();
@@ -13,3 +14,4 @@ modal();
 inputForms();
 tabs();
 slider();
+calc(100);
