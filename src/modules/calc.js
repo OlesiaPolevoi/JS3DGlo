@@ -35,6 +35,7 @@ const calc = (price = 100) => {
 
     total.textContent = Math.round(totalValue);
   };
+
   calcBlock.addEventListener("input", (e) => {
     if (
       e.target === calcType ||
