@@ -19,30 +19,14 @@ const modal = () => {
       modal.style.display = "block";
 
       animate({
-        duration: 300,
+        duration: 350,
         timing(timeFraction) {
           return timeFraction;
         },
         draw(progress) {
           modalContent.style.top = 25 * progress + "%";
-          // elem.style.width = progress * 100 + '%';
         },
       });
-
-      // let count = -52;
-      // let idInterval;
-
-      // const modalAnimate = () => {
-      //   count++;
-      //   idInterval = requestAnimationFrame(modalAnimate);
-
-      //   if (count < 10) {
-      //     modalContent.style.top = count + "%";
-      //   } else {
-      //     cancelAnimationFrame(idInterval);
-      //   }
-      // };
-      // modalAnimate();
     });
   });
 
