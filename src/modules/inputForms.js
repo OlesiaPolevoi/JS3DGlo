@@ -63,15 +63,15 @@ const inputForms = () => {
   const formThreePhone = document.getElementById("form3-phone");
 
   formOnePhone.addEventListener("input", (e) => {
-    e.target.value = e.target.value.replace(/[^\d\-\(\)]/g, "");
+    e.target.value = e.target.value.replace(/[^\d\-\(\)\+]/g, "");
   });
 
   formTwoPhone.addEventListener("input", (e) => {
-    e.target.value = e.target.value.replace(/[^\d\-\(\)]/g, "");
+    e.target.value = e.target.value.replace(/[^\d\-\(\)\+]/g, "");
   });
 
   formThreePhone.addEventListener("input", (e) => {
-    e.target.value = e.target.value.replace(/[^\d\-\(\)]/g, "");
+    e.target.value = e.target.value.replace(/[^\d\-\(\)\+]/g, "");
   });
 };
 

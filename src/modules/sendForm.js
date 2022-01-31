@@ -23,9 +23,7 @@ const sendForm = ({ formId, someElem = [] }) => {
     }).then((res) => res.json());
   };
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
+  const submitForm = () => {
     const formElements = form.querySelectorAll("input");
     const formData = new FormData(form);
     const formBody = {};
@@ -46,7 +44,6 @@ const sendForm = ({ formId, someElem = [] }) => {
         formBody[elem.id] = element.value;
       }
     });
-    console.log("submit");
 
     if (validate(formElements)) {
       sendData(formBody)
@@ -63,7 +60,35 @@ const sendForm = ({ formId, someElem = [] }) => {
     } else {
       alert("Input is not valid");
     }
-  });
+  };
+
+  try {
+    if (!form) {
+      throw new Error("Bring the form back please");
+    }
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const elemName = form.querySelector(`input[name="user_name"]`);
+      const elemPhone = form.querySelector(".form-phone");
+      const elemMessage = form.querySelector(".mess");
+
+      if (elemName) {
+        elemName.value = elemName.value.replace(/[^а-яА-я\-\s]/g, "");
+      }
+      if (elemPhone) {
+        elemPhone.value = elemPhone.value.replace(/[^\d\-\(\)\+]/g, "");
+      }
+
+      if (elemMessage) {
+        elemMessage.value = elemMessage.value.replace(/[^а-яА-я\-\s]/g, "");
+      }
+
+      submitForm();
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 export default sendForm;
