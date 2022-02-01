@@ -3,9 +3,9 @@
 const sendForm = ({ formId, someElem = [] }) => {
   const form = document.getElementById(formId);
   const statusBlock = document.createElement("div");
-  const loadText = "Loading...";
-  const errorText = "Error...";
-  const successText = "Thank you! We will be in touch soon";
+  const loadText = "Загрузка...";
+  const errorText = "Ошибка...";
+  const successText = "Спасибо! Мы скоро с вами свяжемся";
 
   const validate = (list) => {
     let success = true;
@@ -58,25 +58,46 @@ const sendForm = ({ formId, someElem = [] }) => {
           statusBlock.textContent = errorText;
         });
     } else {
-      alert("Input is not valid");
+      alert("Ввод данных не валидный");
     }
   };
 
   try {
     if (!form) {
-      throw new Error("Bring the form back please");
+      throw new Error("Верните форму пожалуйста");
     }
     form.addEventListener("submit", (event) => {
       event.preventDefault();
 
       const elemName = form.querySelector(`input[name="user_name"]`);
       const elemPhone = form.querySelector(".form-phone");
+      const elemEmail = form.querySelector(".form-email");
       const elemMessage = form.querySelector(".mess");
 
       if (elemName) {
+        // console.log(elemName);
+        // console.log(elemName.value);
+        // console.log(elemName.value.length);
+        if (elemName.value.length < 3) {
+          alert("Имя должно быть больше 2 букв");
+          return;
+        }
+
         elemName.value = elemName.value.replace(/[^а-яА-я\-\s]/g, "");
       }
+
+      if (elemEmail.value.length < 1) {
+        alert("Email не должен быть пустым");
+        return;
+      }
+
       if (elemPhone) {
+        if (elemPhone.value.length < 5 || elemPhone.value.length > 11) {
+          alert("Телефон должен быть от 5 до 11 цифр");
+
+          return;
+        }
+
         elemPhone.value = elemPhone.value.replace(/[^\d\-\(\)\+]/g, "");
       }
 
