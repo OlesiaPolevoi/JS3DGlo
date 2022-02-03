@@ -49,6 +49,11 @@ const sendForm = ({ formId, someElem = [] }) => {
       sendData(formBody)
         .then((data) => {
           statusBlock.textContent = successText;
+          if (statusBlock.textContent === successText) {
+            setTimeout(() => {
+              statusBlock.style.display = "none";
+            }, 3000);
+          }
 
           formElements.forEach((input) => {
             input.value = "";
@@ -75,9 +80,6 @@ const sendForm = ({ formId, someElem = [] }) => {
       const elemMessage = form.querySelector(".mess");
 
       if (elemName) {
-        // console.log(elemName);
-        // console.log(elemName.value);
-        // console.log(elemName.value.length);
         if (elemName.value.length < 3) {
           alert("Имя должно быть больше 2 букв");
           return;
